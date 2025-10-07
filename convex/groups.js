@@ -66,6 +66,23 @@ export const getGroupExpenses = query({
             ledger[s.paidByUserId][s.receivedByUserId] -= s.amount; 
         }
 
+        ids.forEach((a) => {
+            ids.forEach((b) => {
+                if (a >= b) return; 
+                
+                const diff = ledger[a][b] - ledger[b][a];
+                if (diff > 0) {
+                    ledger[a][b] = diff;
+                    ledger[b][a] = 0;
+                } else if (diff < 0) {
+                    ledger[b][a] = -diff;
+                    ledger[a][b] = 0;
+                } else {
+                    ledger[a][b] = ledger[b][a] = 0;
+                }
+            });
+        });
+
         const balances = memberDetails.map((m) => ({
             ...m,
             totalBalance: totals[m.id],
