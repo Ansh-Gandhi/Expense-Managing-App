@@ -43,7 +43,7 @@ const ContactsPage = () => {
     const { users, groups } =  data || { users: [], groups: [] };
 
     return (
-        <div className="container mx-auto py-6">
+        <div className="container mx-auto p-6">
             <div className="flex items-center justify-between">
                 <h1 className="gradient-title text-5xl">Contacts</h1>
                 <Button onClick={() => setIsCreateGroupModalOpen(true)}>

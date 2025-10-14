@@ -151,7 +151,7 @@ export const createExpense = mutation({
                 throw new Error("Group not found");
             }
 
-            const isMember = group.members.somne((m) => m.userId === user._id);
+            const isMember = group.members.some((m) => m.userId === user._id);
             if (!isMember) {
                 throw new Error("You are not a member of this group");
             }
