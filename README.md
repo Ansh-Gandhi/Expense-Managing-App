@@ -1,5 +1,7 @@
 # Expense Managing Web App
 
+Try the deployed app here: https://expense-managing-app-ten.vercel.app/
+
 - Developed a full-stack expense management application that allows users to create groups, add shared expenses, and view real-time balances to simplify cost-splitting between individuals or groups
 
 - Designed and built a responsive and intuitive front-end using **Next.js**, ensuring seamless navigation across mobile and desktop devices
